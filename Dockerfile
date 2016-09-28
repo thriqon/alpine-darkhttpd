@@ -1,7 +1,6 @@
+FROM alpine:3.4
+RUN apk add --no-cache darkhttpd && mkdir -p /www
 
-FROM alpine
-
-RUN apk update && apk add darkhttpd && mkdir /www
-
+VOLUME /www
 CMD ["darkhttpd", "/www"]
 EXPOSE 80
